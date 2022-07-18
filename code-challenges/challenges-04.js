@@ -40,13 +40,15 @@ const runningSumOfArray = (arr) => {
 // Output: nums = [0,1,3,0,4,_,_,_]
 const removeElementFromArray = (arr, value) => {
   // write your code here
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === value) {
-      arr[i] = "_";
-    }
+  let resultArray=[], a=0;
+  for (let i=0;i<arr.length;i++){
+      if (arr[i] == value){
+          a+=1;
+          resultArray[arr.length-a] = ("_");
+      }
+      else resultArray[i-a] = arr[i];
   }
-
-  return arr;
+return resultArray;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -64,13 +66,7 @@ const removeElementFromArray = (arr, value) => {
 
 const oddFiltration = (arr) => {
   // write your code here
-  let oddArray = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 !== 0) {
-      oddArray.push(arr[i]);
-    }
-  }
-  
+  return arr.filter(oddNums => Math.abs(oddNums)%2==1)
 };
 // -------------------------------------------------------------------------------------------------------
 
